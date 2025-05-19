@@ -57,6 +57,8 @@ const ModifiedCanceledOrdersPage: React.FC = () => {
     //setOrders(mockOrders);
     }, []);
     if(loading) return <p className="p-4">Cargando pedidos, espere un momento...</p>
+    //error:
+    if(error) return <p className="p-4 text-red-500">{error}</p>
 
     return(
       <div>
