@@ -8,7 +8,7 @@ interface Props{
 const SalesPerfomanceTable : React.FC<Props> = ({rows}) => {
     return (
     <div className="p-4 bg-white shadow rounded">
-      <h2 className="text-xl font-bold mb-4 text-center">Desempeño por Ventas</h2>
+      
       <table className="w-full border border-gray-300">
         <thead>
           <tr className="bg-gray-100">

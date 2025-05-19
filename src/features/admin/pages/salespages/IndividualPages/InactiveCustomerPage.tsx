@@ -1,4 +1,5 @@
 import React , { useEffect, useState } from "react";
+import Header from "../../../components/Header";
 import InactiveCustomerTable from "../../../components/salescomponents/IndividualComponents/InactiveCustomerTable";
 import type { Customer } from "../../../../sales/types/CustomerType";
 import { CustomerStatus } from "../../../../sales/types/CustomerType";
@@ -43,11 +44,12 @@ const dummyCustomers: Customer[] = [
 ];
 
 const InactiveCustomerPage: React.FC = () => {
-    //const [customers, setCustomers] = useState<Customer[]>([]);
-    //const [loading, setLoading] = useState<boolean>(true);
-    //const [error, setError] = useState<string | null>(null);
+  //datos y UseEffect para llamar el axios 
+    const [customers, setCustomers] = useState<Customer[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
-    /*
+    
     useEffect(() => {
         const fetchCustomers = async () => {
             try {
@@ -71,17 +73,24 @@ const InactiveCustomerPage: React.FC = () => {
         fetchCustomers();
     }, []);
 
-    if (loading) return <p className="p-4">Cargando clientes...</p>;
-    if (error) return <p className="p-4 text-red-500">{error}</p>;*/
+    if (loading) return <p className="p-4">Cargando clientes,espere un momento...</p>;
+    if (error) return <p className="p-4 text-red-500">{error}</p>;
 
+    /* Utilizar con datos ficticios: 
     const filteredCustomers = dummyCustomers.filter(
         (c) => c.status === CustomerStatus.Inactive || c.status === CustomerStatus.Lost
-    );
+    );*/
 
     return (
-    <div className="p-8">
-      <InactiveCustomerTable customers={filteredCustomers} />
-      <GraphInactiveCustomer/>
+    <div>
+      <Header/>
+      <div className="p-8">
+        <h2 className="text-2xl font-bold text-blue-800 text-center">
+          Reporte: Cliente inactivos y/o Perdidos
+        </h2>
+        <InactiveCustomerTable customers={customers} />
+        <GraphInactiveCustomer/>
+      </div>
     </div>
   );
 }

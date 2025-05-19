@@ -12,7 +12,7 @@ const ModifiedCanceledOrdersTable : React.FC<Props> = ({orders}) => {
 
     return(
         <div>
-            <h2 className="text-xl font-bold mb-4">Reporte: Pedidos cancelados / Modificados </h2>
+            
              <table className="w-full border text-sm">
                 <thead className="bg-gray-100">
                 <tr>

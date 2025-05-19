@@ -23,7 +23,7 @@ const InactiveCustomerTable : React.FC<Props> = ({customers}) => {
 
     return(
         <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-4">Reporte: Clientes Inactivos o Perdidos</h2>
+            
                 <table className="w-full border border-gray-300">
                     <thead className="bg-gray-100">
                         <tr>

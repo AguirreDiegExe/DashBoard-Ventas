@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "../../../components/Header";
 import CustomerSatisfactionTable from "../../../components/salescomponents/IndividualComponents/CustomerSatisfactionTable";
 import CustomerSatisfactionChart from "../../../components/salescomponents/Graphs/GraphSatisfactionCustomer";
 import { CustomerStatus, type Customer } from "../../../../sales/types/CustomerType";
@@ -86,12 +87,15 @@ const CustomerSatisfacionPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold text-blue-800">
-        Reporte: Satisfacción del Cliente
-      </h2>
-      <CustomerSatisfactionTable data={customers} />
-      <CustomerSatisfactionChart customers={customers} />
+    <div>
+      <Header/>
+      <div className="p-6 space-y-6">
+          <h2 className="text-2xl font-bold text-blue-800 text-center">
+            Reporte: Satisfacción del Cliente
+          </h2>
+          <CustomerSatisfactionTable data={customers} />
+          <CustomerSatisfactionChart customers={customers} />
+      </div>
     </div>
   );
 };

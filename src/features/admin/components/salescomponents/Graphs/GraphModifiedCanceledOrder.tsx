@@ -35,8 +35,9 @@ const GraphModifiedCanceledOrders : React.FC<Props> = ({orders}) => {
     ]
 
     return(
-        <div >
+        <div>
             <div className="w-full h-64 rounded-xl p-4" style={{ backgroundColor: "#1e3a8a" }}>
+                <h1 className="text-white text-1xl font-bold">Grafico de pedidos cancelados y modificados</h1>
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={ChartData}>
                         <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />

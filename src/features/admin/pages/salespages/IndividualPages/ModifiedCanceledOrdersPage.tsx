@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "../../../components/Header";
 import { OrderStatus, type Order } from "../../../../sales/types/OrderType";
 import ModifiedCanceledOrdersTable from "../../../components/salescomponents/IndividualComponents/ModifiedCanceledOrdersTable";
 import GraphModifiedCanceledOrders from "../../../components/salescomponents/Graphs/GraphModifiedCanceledOrder";
@@ -51,16 +52,23 @@ const ModifiedCanceledOrdersPage: React.FC = () => {
         }
     };
 
-        fetchOrders();
+      fetchOrders();
         
     //setOrders(mockOrders);
     }, []);
+    if(loading) return <p className="p-4">Cargando pedidos, espere un momento...</p>
 
     return(
+      <div>
+        <Header/>
         <div className="p-4">
+            <h2 className="text-2xl font-bold text-blue-800 text-center">
+              Reporte: Pedidos cancelados y Modificados 
+            </h2>
             <ModifiedCanceledOrdersTable orders={Orders} /> 
             <GraphModifiedCanceledOrders orders={Orders}/>
         </div>
+      </div>
     )
 }
 

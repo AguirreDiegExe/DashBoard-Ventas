@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "../../../components/Header";
 import type { Employee } from "../../../../sales/types/EmployeeType";
 import { OrderStatus, type Order } from "../../../../sales/types/OrderType";
 import SalesPerfomanceTable from "../../../components/salescomponents/IndividualComponents/SalesPerfomanceTable";
@@ -35,28 +36,34 @@ const empleadosMock: Employee[] = [
 ];
 
 const SalesPerfomancePage = () => {
-    const [empleados,setEmpleados] = useState<Employee[]>([]); 
-
+    const [empleados, setEmpleados] = useState<Employee[]>([]);
+    
     useEffect(() => {
         const fetchEmpleados = async () => {
         try {
             const response = await API.get("/empleados"); // Ajustá el endpoint si es diferente
             setEmpleados(response.data);
         } catch (error) {
-            console.error("Error al obtener empleados, usando datos mock:", error);
+            console.error("Error al obtener empleados, se utilizara datos ficticios", error);
+            //Sacar esta linea del codigo cuando se utilice la api:
             setEmpleados(empleadosMock); // Fallback mock
-        }
+          }
         };
 
         fetchEmpleados();
     }, []);
-    
+
     return(
-        <div className="p-4">
-            
+      <div>
+        <Header/>
+        <div className="p-4"> 
+            <h2 className="text-2xl font-bold text-blue-800 text-center">
+              Reporte: Desempeño por ventas 
+            </h2>
             <SalesPerfomanceTable rows={empleados} />
             <GraphSalesPerfomance data={empleados} />
         </div>
+      </div>
     )
 }
 

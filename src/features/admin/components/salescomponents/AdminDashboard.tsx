@@ -1,60 +1,58 @@
 import React from "react";
-import CustomerPage from "../../pages/salespages/IndividualPages/CustomerPage";
-import InactiveCustomerPage from "../../pages/salespages/IndividualPages/InactiveCustomerPage";
-import CustomerSatisfacionPage from "../../pages/salespages/IndividualPages/CustomerSatisfactionPage";
-import ModifiedCanceledOrdersPage from "../../pages/salespages/IndividualPages/ModifiedCanceledOrdersPage";
-import SalesPerfomancePage from "../../pages/salespages/IndividualPages/SalesPerfomancePage";
+import Header from "../Header";
+import { Link } from "react-router-dom";
 
-
+//5 tarjetas , descripcion del reporte , que es y demas
 const AdminDashboard: React.FC = () => {
+
+  const ReportDesciption = [
+    {
+      title: "Reporte de Clientes",
+      description: "Visualiza todos los clientes registrados.",
+      path: "/reporte-clientes",
+    },
+    {
+      title: "Clientes Inactivos o Perdidos",
+      description: "Analiza los clientes que dejaron de comprar.",
+      path: "/clientes-inactivos",
+    },
+    {
+      title: "Satisfacción del Cliente",
+      description: "Mide la satisfacción según las opiniones del cliente.",
+      path: "/satisfaccion-cliente",
+    },
+    {
+      title: "Pedidos Cancelados o Modificados",
+      description: "Consulta los pedidos alterados por alguna razón.",
+      path: "/pedidos-cancelados",
+    },
+    {
+      title: "Desempeño por Ventas",
+      description: "Revisa cómo ha rendido el equipo de ventas.",
+      path: "/desempeno-ventas",
+    },
+  ]
   return(
-    <div className="p-4 space-y-8">
-      <h1 className="text-3xl font-bold text-center text-blue-900 mb-8">
-        Panel de Administración
-      </h1>
-
-      
-      <div className="flex flex-wrap gap-8 justify-center">
-        
-        <section className="bg-white shadow-md rounded-lg p-6 max-w-[600px] w-full">
-          <h2 className="text-xl font-semibold mb-4 text-blue-700">
-            Reporte de Clientes
-          </h2>
-          <CustomerPage />
-        </section>
-
-        
-        <section className="bg-white shadow-md rounded-lg p-6 max-w-[600px] w-full">
-          <h2 className="text-xl font-semibold mb-4 text-blue-700">
-            Reporte: Clientes Inactivos o Perdidos
-          </h2>
-          <InactiveCustomerPage />
-        </section>
-
-      </div>
-
-      <div className="flex flex-wrap gap-8 justify-center">
-
-        <section className="bg-white shadow-md rounded-lg p-6 max-w-[600px] w-full">
-          <h2 className="text-xl font-semibold mb-4 text-blue-700">
-            Satisfaction del cliente
-          </h2>
-          <CustomerSatisfacionPage/>
-        </section>
-
-        <section className="bg-white shadow-md rounded-lg p-6 max-w-[600px] w-full">
-          <h2 className="text-xl font-semibold mb-4 text-blue-700">
-            Pedidos cancelados y Modificados: 
-          </h2>
-          <ModifiedCanceledOrdersPage/>
-        </section>
-
-      </div>
-
-      <div className="bg-white">
-        <section className="bg-white shadow-md rounded-lg p-6 w-full">
-          <SalesPerfomancePage/>
-        </section>
+    <div>
+      <Header/>
+        <div className="p-8 space-y-10">
+        <h1 className="text-3xl font-bold text-center text-blue-900">
+          Panel de administracion 
+        </h1>
+        <div className="flex flex-wrap gap-8 justify-center">
+          {ReportDesciption.map((report) =>
+          <Link
+              to={report.path}
+              key={report.title}
+              className="bg-white hover:shadow-lg transition-shadow shadow-md rounded-lg p-6 max-w-sm w-full border border-gray-200"
+            >
+              <h2 className="text-xl font-semibold mb-2 text-blue-700">
+                {report.title}
+              </h2>
+              <p className="text-gray-600">{report.description}</p>
+            </Link> 
+          )}
+        </div>
       </div>
     </div>
   );

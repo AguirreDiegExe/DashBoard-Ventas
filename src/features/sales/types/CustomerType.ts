@@ -7,6 +7,7 @@ export interface Customer {
   phoneNumber: string;
   address: string;
   registrationDate: string; // ISO string
+  //NUEVO
   status: CustomerStatus;
   descriptionSatisfacition: string;
 }
