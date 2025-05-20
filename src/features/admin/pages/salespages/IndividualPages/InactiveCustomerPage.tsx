@@ -1,9 +1,9 @@
 import React , { useEffect, useState } from "react";
 import Header from "../../../components/Header";
-import InactiveCustomerTable from "../../../components/salescomponents/IndividualComponents/InactiveCustomerTable";
+import InactiveCustomerTable from "../../../components/salescomponents/IndividualComponentsSales/InactiveCustomerTable";
 import type { Customer } from "../../../../sales/types/CustomerType";
 import { CustomerStatus } from "../../../../sales/types/CustomerType";
-import GraphInactiveCustomer from "../../../components/salescomponents/Graphs/GraphInactiveCustomer";
+import GraphInactiveCustomer from "../../../components/salescomponents/GraphsSales/GraphInactiveCustomer";
 import API from "../../../../../api/axios";
 
 
@@ -89,7 +89,7 @@ const InactiveCustomerPage: React.FC = () => {
           Reporte: Cliente inactivos y/o Perdidos
         </h2>
         <InactiveCustomerTable customers={customers} />
-        <GraphInactiveCustomer/>
+        <GraphInactiveCustomer customers={customers}/>
       </div>
     </div>
   );

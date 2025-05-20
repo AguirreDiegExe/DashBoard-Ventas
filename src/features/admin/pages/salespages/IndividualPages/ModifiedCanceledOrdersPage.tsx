@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../../components/Header";
 import { OrderStatus, type Order } from "../../../../sales/types/OrderType";
-import ModifiedCanceledOrdersTable from "../../../components/salescomponents/IndividualComponents/ModifiedCanceledOrdersTable";
-import GraphModifiedCanceledOrders from "../../../components/salescomponents/Graphs/GraphModifiedCanceledOrder";
+import ModifiedCanceledOrdersTable from "../../../components/salescomponents/IndividualComponentsSales/ModifiedCanceledOrdersTable";
+import GraphModifiedCanceledOrders from "../../../components/salescomponents/GraphsSales/GraphModifiedCanceledOrder";
 import API from "../../../../../api/axios";
 
 // Simulación de pedidos. Reemplazar por fetch real.

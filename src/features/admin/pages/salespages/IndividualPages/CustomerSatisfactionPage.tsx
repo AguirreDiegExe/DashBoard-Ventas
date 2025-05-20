@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "../../../components/Header";
-import CustomerSatisfactionTable from "../../../components/salescomponents/IndividualComponents/CustomerSatisfactionTable";
-import CustomerSatisfactionChart from "../../../components/salescomponents/Graphs/GraphSatisfactionCustomer";
+import CustomerSatisfactionTable from "../../../components/salescomponents/IndividualComponentsSales/CustomerSatisfactionTable";
+import CustomerSatisfactionChart from "../../../components/salescomponents/GraphsSales/GraphSatisfactionCustomer";
 import { CustomerStatus, type Customer } from "../../../../sales/types/CustomerType";
 import { OrderStatus, type Order } from "../../../../sales/types/OrderType";
 import API from "../../../../../api/axios";

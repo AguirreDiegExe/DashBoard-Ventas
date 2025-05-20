@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Header from "../../../components/Header";
 import { CustomerStatus, type Customer } from "../../../../sales/types/CustomerType";
 import { OrderStatus, type Order } from "../../../../sales/types/OrderType";
-import CustomerTable from "../../../components/salescomponents/IndividualComponents/CustomerTable";
-import CustomerOrdersChart from "../../../components/salescomponents/Graphs/GraphCustomerReport";
+import CustomerTable from "../../../components/salescomponents/IndividualComponentsSales/CustomerTable";
+import CustomerOrdersChart from "../../../components/salescomponents/GraphsSales/GraphCustomerReport";
 import API from "../../../../../api/axios";
 
 const mockCustomers: Customer[] = [

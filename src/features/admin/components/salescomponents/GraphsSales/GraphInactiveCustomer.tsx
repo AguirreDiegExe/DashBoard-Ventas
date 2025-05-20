@@ -1,15 +1,25 @@
 import React from "react";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
+import type { Customer } from "../../../../sales/types/CustomerType";
+import { CustomerStatus } from "../../../../sales/types/CustomerType";
 
 // Datos ficticios (podés reemplazar esto con props o datos reales si lo necesitás)
-const data = [
-  { name: "Inactivos", value: 1 },
-  { name: "Perdidos", value: 1 },
-];
+interface Props{
+  customers: Customer[];
+}
 
 const COLORS = ["#8884d8", "#ff6384"];
 
-const GraphInactiveCustomer: React.FC = () => {
+const GraphInactiveCustomer: React.FC<Props> = ({customers}) => {
+    // Contar cuántos son Inactivos y cuántos Perdidos
+  const inactiveCount = customers.filter(c => c.status === CustomerStatus.Inactive).length;
+  const lostCount = customers.filter(c => c.status === CustomerStatus.Lost).length;
+
+  const data = [
+    { name: "Inactivos", value: inactiveCount },
+    { name: "Perdidos", value: lostCount },
+  ];
+
   return (
     <div className="flex justify-center items-center mt-6">
       <div className="bg-white shadow-md rounded-lg p-4">

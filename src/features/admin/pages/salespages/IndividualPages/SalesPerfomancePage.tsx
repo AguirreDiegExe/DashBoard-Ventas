@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "../../../components/Header";
 import type { Employee } from "../../../../sales/types/EmployeeType";
 import { OrderStatus, type Order } from "../../../../sales/types/OrderType";
-import SalesPerfomanceTable from "../../../components/salescomponents/IndividualComponents/SalesPerfomanceTable";
-import GraphSalesPerfomance from "../../../components/salescomponents/Graphs/GraphSalesPerfomance";
+import SalesPerfomanceTable from "../../../components/salescomponents/IndividualComponentsSales/SalesPerfomanceTable";
+import GraphSalesPerfomance from "../../../components/salescomponents/GraphsSales/GraphSalesPerfomance";
 import API from "../../../../../api/axios";
 
 const empleadosMock: Employee[] = [

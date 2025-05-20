@@ -37,7 +37,7 @@ const AdminDashboard: React.FC = () => {
       <Header/>
         <div className="p-8 space-y-10">
         <h1 className="text-3xl font-bold text-center text-blue-900">
-          Panel de administracion 
+          Panel de administracion de ventas
         </h1>
         <div className="flex flex-wrap gap-8 justify-center">
           {ReportDesciption.map((report) =>
